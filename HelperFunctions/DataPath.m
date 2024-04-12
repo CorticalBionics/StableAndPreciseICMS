@@ -1,3 +1,3 @@
 function path = DataPath()
-    path = 'C:\Users\somlab\Desktop\StableAndPreciseData';
+    path = 'C:\Users\somlab\Box\Sharing\StableAndPreciseData';
 end
