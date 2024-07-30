@@ -337,3 +337,6 @@ ax(9) = axes('Position', [.76 .1 .175 .2]); hold on
  
 AddFigureLabels(gcf, [0.1, 0.02]);
 shg
+
+export_path = fullfile(DataPath, 'Figure6_SingleChannel');
+print(fig, export_path, '-dsvg', '-r300')

@@ -55,7 +55,7 @@ ax(3) = axes('Position', [.1 .065 .1 .35]); hold on
 
 
 axes('Position', [0.25 0.05 .4 .4]);
-    imshow("B:\UserFolders\CharlesGreenspon\BCI_RFPF\Figures\LocalizationReference.png")
+    imshow(fullfile(DataPath(), "LocalizationReference.png"))
     set(gca, 'XTick', [], 'YTick', [])
 
 ds = 'Box';
@@ -87,7 +87,9 @@ annotation("textbox", [0.2 y3 .05 .05], 'String', char(char_offset+4), ...
 annotation("textbox", [0.675 y3 .05 .05], 'String', char(char_offset+5), ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 
-
+% Export
+export_path = fullfile(DataPath, 'Figure4_Localization');
+print(fig, export_path, '-dsvg', '-r300')
 %% Helper function
 function PlotPF(palmar_template, axis_position, MCData, COI, cmap)
     xl = [80, 800];

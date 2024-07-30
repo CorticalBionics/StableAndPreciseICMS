@@ -5,7 +5,7 @@ load(fullfile(DataPath, "ForceEquivMulti.mat")) % Mech amp est
 load(fullfile(DataPath, "AmpDiscrimMultiChanRaw")) % multi chan discrim
 load(fullfile(DataPath, "AmpDiscrimMultiBioLin.mat")) % multi chan discrim bio vs lin
 load(fullfile(DataPath, "MultiChanDTs.mat")) % multi chan discrim
-load("B:\UserFolders\CharlesGreenspon\BCI_DetectionThresholds\Data\BCI02\DetectionDataProcessed_BCI02.mat"); % Detection data
+load(fullfile(DataPath, "DetectionDataProcessed_BCI02.mat")); % Detection data
 % Figure options
 SetFont('Arial', 9)
 
@@ -342,3 +342,6 @@ annotation("textbox", [0.025 0.32 .05 .05], 'String', char(char_offset+6), ...
 'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 annotation("textbox", [0.75 0.32 .05 .05], 'String', char(char_offset+7), ...
 'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
+
+export_path = fullfile(DataPath, 'Figure7_MultiChannel');
+print(fig, export_path, '-dsvg', '-r300')

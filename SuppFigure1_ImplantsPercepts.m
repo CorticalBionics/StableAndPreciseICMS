@@ -28,3 +28,7 @@ a1 = axes('Position', [0 0 1 1]);
 image(full_frame, 'Parent', a1)
 set(gca, 'XColor', 'none', 'YColor', 'none', 'DataAspectRatio', [1 1 1])
 set(gcf, 'Position', [50, 50, 1000, 1300])
+
+
+export_path = fullfile(DataPath, 'SuppFig1_Implants');
+print(gcf, export_path, '-dsvg', '-r300')

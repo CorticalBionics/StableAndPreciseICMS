@@ -275,6 +275,7 @@ RD_md_mc = RoboticDigitLocalizationTable.Correct(md_mc_idx);
 
 
 %% Supplement Plot
+ds = 'Box'; spl = 50;
 sc_color = rgb(158, 158, 158);
 mc_color = rgb(244, 67, 54);
 clf; set(gcf, 'Units', 'Inches', 'Position', [30, 1, 6.48, 4]);
@@ -319,6 +320,9 @@ annotation("textbox", [.325 .8 .05 .05], 'String', 'B', ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 annotation("textbox", [.65 .8 .05 .05], 'String', 'C', ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
+
+export_path = fullfile(DataPath, 'SuppFig5_Localization');
+print(gcf, export_path, '-dsvg', '-r300')
 
 
 %% Helper function

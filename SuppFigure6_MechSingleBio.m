@@ -242,3 +242,6 @@ i = 1;
 
 
 AddFigureLabels(gcf, [0.05, -0.025]);
+
+export_path = fullfile(DataPath, 'SuppFig6_Mech');
+print(gcf, export_path, '-dsvg', '-r300')

@@ -195,3 +195,6 @@ ax(4) = axes('Position', [0.2 0.05 0.675 .175]); hold on
 
     text(.975, .525, ColorText({'Single ICMS', 'Mechanical'}, [[.6 .6 .6];mech_color]), ...
         'VerticalAlignment', 'bottom', 'HorizontalAlignment','right')
+
+export_path = fullfile(DataPath, 'Figure5_Force');
+print(fig, export_path, '-dsvg', '-r300')

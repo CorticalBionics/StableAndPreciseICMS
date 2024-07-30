@@ -61,4 +61,4 @@ end
 shg
 
 % Export
-% print(fig, export_path, '-dpng', '-r300')
+print(fig, export_path, '-dsvg', '-r300')

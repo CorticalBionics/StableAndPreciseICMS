@@ -302,3 +302,6 @@ annotation("textbox", [.625 y3 .05 .05], 'String', char(char_offset+9), ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 shg
 
+% Export
+export_path = fullfile(DataPath, 'Figure2_Stability');
+print(fig, export_path, '-dsvg', '-r300')

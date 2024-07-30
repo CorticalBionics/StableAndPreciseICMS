@@ -126,3 +126,6 @@ ax(8) = subplot(h,w,8); hold on
     xlabel('Vector Strength'); ylabel(sprintf('2%s Vector Strength', GetUnicodeChar('pi')))   
 
 AddFigureLabels(gcf, [0.05, 0.0])
+
+export_path = fullfile(DataPath, 'SuppFig2_Stability');
+print(gcf, export_path, '-dsvg', '-r300')

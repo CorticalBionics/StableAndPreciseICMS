@@ -201,4 +201,7 @@ ax(3) = axes('Position', [.675 .2 .225 .75]); hold on
 
 AddFigureLabels(ax, [0.05, 0]); shg
 
+export_path = fullfile(DataPath, 'SuppFig4_AmpFreq');
+print(gcf, export_path, '-dsvg', '-r300')
+
 
