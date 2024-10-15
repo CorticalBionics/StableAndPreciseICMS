@@ -322,7 +322,9 @@ annotation("textbox", [.65 .8 .05 .05], 'String', 'C', ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 
 export_path = fullfile(DataPath, 'SuppFig5_Localization');
-print(gcf, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')
+
 
 
 %% Helper function

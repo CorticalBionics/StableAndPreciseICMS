@@ -304,4 +304,6 @@ shg
 
 % Export
 export_path = fullfile(DataPath, 'Figure2_Stability');
-print(fig, export_path, '-dsvg', '-r300')
+% Export
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

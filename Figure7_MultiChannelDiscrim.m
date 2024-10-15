@@ -342,6 +342,7 @@ annotation("textbox", [0.025 0.32 .05 .05], 'String', char(char_offset+6), ...
 'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 annotation("textbox", [0.75 0.32 .05 .05], 'String', char(char_offset+7), ...
 'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
-
+%%
 export_path = fullfile(DataPath, 'Figure7_MultiChannel');
-print(fig, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

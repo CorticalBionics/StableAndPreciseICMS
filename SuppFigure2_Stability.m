@@ -128,4 +128,5 @@ ax(8) = subplot(h,w,8); hold on
 AddFigureLabels(gcf, [0.05, 0.0])
 
 export_path = fullfile(DataPath, 'SuppFig2_Stability');
-print(gcf, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

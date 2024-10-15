@@ -52,7 +52,7 @@ ax(3) = axes('Position', [.1 .065 .1 .35]); hold on
     set(gca, 'XLim', [.5 2.5], 'XTick', [1,2], 'XTickLabel', {'Obs', 'Null'}, 'YLim', [-1 1], ...
         'YTick', [-1:.5:1], 'XTickLabelRotation', 0)
     ylabel('Correlation (r)')
-
+    [H,P,KSSTAT] = kstest2(MultiElecAnalysis.SumCorr, MultiElecAnalysis.NullCorr(:)); 
 
 axes('Position', [0.25 0.05 .4 .4]);
     imshow(fullfile(DataPath(), "LocalizationReference.png"))
@@ -86,10 +86,11 @@ annotation("textbox", [0.2 y3 .05 .05], 'String', char(char_offset+4), ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 annotation("textbox", [0.675 y3 .05 .05], 'String', char(char_offset+5), ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
-
+%%
 % Export
 export_path = fullfile(DataPath, 'Figure4_Localization');
-print(fig, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')
 %% Helper function
 function PlotPF(palmar_template, axis_position, MCData, COI, cmap)
     xl = [80, 800];

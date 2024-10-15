@@ -61,4 +61,5 @@ end
 shg
 
 % Export
-print(fig, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

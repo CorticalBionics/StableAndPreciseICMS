@@ -266,7 +266,7 @@ ax(7) = axes('Position', [.8 .085 .15 .175]); hold on
         [SubjectColors('BCI02'); SubjectColors('CRS07'); cwru_color]), 'YLim', [-4 4])
     ylabel('#RF - #PF')
 
-
+%%
 y1 = .94; y2 = .575; y3 = 0.25;
 char_offset = 64;
 annotation("textbox", [0 y1 .05 .05], 'String', char(char_offset+1), ...
@@ -288,7 +288,8 @@ annotation("textbox", [0.525 y3 .05 .05], 'String', char(char_offset+8), ...
 annotation("textbox", [0.75 y3 .05 .05], 'String', char(char_offset+9), ...
             'VerticalAlignment','top', 'HorizontalAlignment','left', 'EdgeColor', 'none', 'FontWeight','bold')
 
-print(fig, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')
 
 %% Helper functions
 function [xr,yr] = rotate_coords(x,y,r)

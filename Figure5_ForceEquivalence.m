@@ -197,4 +197,5 @@ ax(4) = axes('Position', [0.2 0.05 0.675 .175]); hold on
         'VerticalAlignment', 'bottom', 'HorizontalAlignment','right')
 
 export_path = fullfile(DataPath, 'Figure5_Force');
-print(fig, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

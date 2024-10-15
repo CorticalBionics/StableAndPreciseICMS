@@ -4,7 +4,7 @@ load(fullfile(DataPath, "ForceEquivMulti.mat")) % Mech amp est
 load(fullfile(DataPath, "AmpDiscrimMultiChanRaw")) % multi chan discrim
 load(fullfile(DataPath, "ForceEquiv_UC.mat")) % Mech amp est
 
-
+SetFont('Arial', 9)
 pow_fun = fittype('a*(x+o)^b');
 lin_fun = fittype('m*x+c');
 force2amp = @(pow_coeffs, lin_coeffs, x) (pow_coeffs(1) * (x + pow_coeffs(3)).^pow_coeffs(2) - lin_coeffs(1)) ./ lin_coeffs(2);
@@ -133,5 +133,6 @@ ax(3) = nexttile; hold on
 
 %%% Labels
 AddFigureLabels(ax, [0.075 -0.05])
-ffname = fullfile(DataPath, 'SuppFig7_MultiChForce');
-print(fig, ffname, '-dpng', '-r300')
+export_path = fullfile(DataPath, 'SuppFig7_MultiChForce');
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')

@@ -31,4 +31,5 @@ set(gcf, 'Position', [50, 50, 1000, 1300])
 
 
 export_path = fullfile(DataPath, 'SuppFig1_Implants');
-print(gcf, export_path, '-dsvg', '-r300')
+print(gcf, export_path, '-dpng', '-r300')
+print(gcf, export_path, '-depsc', '-r300')
